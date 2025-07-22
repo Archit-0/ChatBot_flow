@@ -1,12 +1,48 @@
-# React + Vite
+🧩 Chatbot Flow Builder
+A visual chatbot conversation flow builder built with React that allows you to:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Drag and drop message nodes.
 
-Currently, two official plugins are available:
+Connect nodes visually with arrows.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pan and zoom the canvas.
 
-## Expanding the ESLint configuration
+Validate flows before saving.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Edit node contents in a clean settings panel.
+
+🚀 Features
+✅ Drag-and-Drop Builder – Build conversation flows intuitively.
+✅ Connection Management – Visual arrows showing conversation paths.
+✅ Validation Before Save – Prevent incomplete or invalid flows.
+✅ Resizable & Pannable Canvas – Move around your conversation map easily.
+✅ Modular Code Structure – Easy to extend and maintain.
+✅ Component-based React Architecture – Uses hooks and clean splitting for scalability.
+
+🖥️ Tech Stack
+React
+
+Tailwind CSS (for styling)
+
+Lucide React (for icons)
+
+Context/State Management with Hooks
+
+
+🛠️ Installation
+1️⃣ Clone the repository:
+
+git clone https://github.com/yourusername/chatbot-flow-builder.git
+cd chatbot-flow-builder
+2️⃣ Install dependencies:
+
+
+npm install
+3️⃣ Run the development server:
+
+
+npm run dev
+Your project will be running at:
+
+
+http://localhost:5173
