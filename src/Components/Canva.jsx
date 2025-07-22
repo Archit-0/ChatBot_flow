@@ -218,11 +218,16 @@ const Canva = ({
   const handleSave = () => {
     const isValid = validateFlow();
     if (isValid) {
-      // In a real app, you'd send this data to a backend API.
-      console.log("Saving flow:", { nodes, connections });
+      localStorage.setItem("chatbotFlowNodes", JSON.stringify(nodes));
+      localStorage.setItem(
+        "chatbotFlowConnections",
+        JSON.stringify(connections)
+      );
+      console.log("Flow saved locally:", { nodes, connections });
+
+      setValidationMessage("Success: Flow saved locally!");
       setTimeout(() => setValidationMessage(""), 3000);
     } else {
-      // Let the error message linger a bit longer.
       setTimeout(() => setValidationMessage(""), 5000);
     }
   };
@@ -332,6 +337,19 @@ const Canva = ({
           >
             <Save className="w-4 h-4" />
             Save
+          </button>
+          <button
+            onClick={() => {
+              localStorage.removeItem("chatbotFlowNodes");
+              localStorage.removeItem("chatbotFlowConnections");
+              setNodes([]);
+              setConnections([]);
+              setValidationMessage("Cleared saved flow.");
+              setTimeout(() => setValidationMessage(""), 3000);
+            }}
+            className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
+          >
+            Clear Flow
           </button>
         </div>
       </div>

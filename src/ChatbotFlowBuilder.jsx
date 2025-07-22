@@ -13,8 +13,14 @@ import Canva from "./Components/Canva";
 export default function ChatbotFlowBuilder() {
   // === STATE MANAGEMENT ===
   // This is the heart of our application. All data lives here.
-  const [nodes, setNodes] = useState([]); // Array of all message blocks on the canvas.
-  const [connections, setConnections] = useState([]); // Array of all the arrows connecting nodes.
+  const [nodes, setNodes] = useState(() => {
+    const savedNodes = localStorage.getItem("chatbotFlowNodes");
+    return savedNodes ? JSON.parse(savedNodes) : [];
+  }); // Array of all message blocks on the canvas.
+  const [connections, setConnections] = useState(() => {
+    const savedConnections = localStorage.getItem("chatbotFlowConnections");
+    return savedConnections ? JSON.parse(savedConnections) : [];
+  }); // Array of all the arrows connecting nodes.
   const [selectedNodeId, setSelectedNodeId] = useState(null); // Which node is currently selected.
   const [showSettings, setShowSettings] = useState(false); // Controls if the SettingsPanel is visible.
   const [isConnecting, setIsConnecting] = useState(false); // Are we currently dragging a new connection line?
@@ -143,8 +149,6 @@ export default function ChatbotFlowBuilder() {
     setIsConnecting(false);
     setConnectionStart(null);
   };
-
-  
 
   // This useEffect is crucial for making connections work. It finds all the handles
   // on the page and attaches our mouse down/up logic to them. It re-runs whenever
