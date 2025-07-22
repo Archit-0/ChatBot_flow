@@ -343,7 +343,6 @@ const Canva = ({
               localStorage.removeItem("chatbotFlowNodes");
               localStorage.removeItem("chatbotFlowConnections");
               setNodes([]);
-              setConnections([]);
               setValidationMessage("Cleared saved flow.");
               setTimeout(() => setValidationMessage(""), 3000);
             }}
